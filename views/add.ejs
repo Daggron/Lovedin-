@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            LovedIn
+        </title>
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <meta name="Author" content="Lord Abhay Sharma Himself">
+        <meta name="Description" content="A dating website">
+        <meta name="keywords" content="Lovedin , Dating,Chitkara Lovedin">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    </head>
+    <body>
+
+      <p>
+         <%- messages('messages', locals) %>
+      </p>
+
+        <div class="container">
+            <div class="row">
+                <form class="col s12" action="/add/stories" method="POST" enctype="multipart/form-data">
+                  <div class="row">
+                    <!-- <div class="input-field col s6">
+                      <input placeholder="Placeholder" name="title" id="first_name" type="text" class="validate">
+                      <label for="first_name">Title</label>
+                    </div> -->
+                    <div class="input-field col s6">
+                      <input id="last_name" type="text" name="caption" class="validate">
+                      <label for="last_name">Caption</label>
+                    </div>
+                  </div>
+                  <div class="file-field input-field">
+                        <div class="btn">
+                            <span>File</span>
+                            <input  name="myImage" type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                     
+                         <input type="submit" value="Upload" class="btn">
+                    
+                  </div>
+                </form>
+              </div>
+            
+        </div>
+                
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </body>
+</html>

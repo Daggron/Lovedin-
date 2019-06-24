@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        LovedIn
+    </title>
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <meta name="Author" content="Lord Abhay Sharma Himself">
+    <meta name="Description" content="A dating website">
+    <meta name="keywords" content="Lovedin , Dating,Chitkara Lovedin">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Akronim&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+
+<%- include navbar.ejs %>
+
+
+<%- messages('messages', locals) %>
+
+<% if (users){ %>
+
+    <div class="container">
+        <div class="outer-box">
+            <% for(var i = posts.length - 1;i >= 0;i--){ %>
+
+                <% if( users.following.includes(posts[i].posted) || (users._id == posts[i].posted) ) { %>
+
+                <div class="inbox">
+                    <a href="/home/<%= posts[i]._id %>">
+                        <div class="post-container">
+                            <div class="top-bar">
+
+                                <div class="propic">
+                                    <div class="box-toolbar">
+                                        <div class="propic-inbox">
+                                            <img src="/<%= posts[i].userimage %>" alt="<%= posts[i].author %>">
+                                        </div>
+                                            <h6>
+                                                <%= posts[i].author %>
+
+                                            </h6>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="post-image">
+                                <img src="/<%= typeof posts[i].image != 'undefined' ? posts[i].image : '' %>">
+                            </div>
+                            <div class="time-stamp">
+                                <p>
+                                    <em><%= posts[i].timeStamp %></em>
+                                </p>
+                            </div>
+                            <div class="post-caption">
+                                <p class="caption">
+                                    <strong class="user-name">
+                                        <%= posts[i].author %> : &nbsp;
+                                    </strong>
+                                    <span><%= posts[i].caption %></span>
+
+                                <p>View All comments</p>
+                                    <div class="comments">
+
+                                <% for (var j = 0;j < comments.length;j++){ %>
+
+                                    <% if (comments[j].postedOn == posts[i]._id){ %>
+                                    <div class="single-comment">
+                                        <h5>
+                                            <span class="user-name-comments"><%= comments[j].author %></span> :&nbsp;<%= comments[j].content %>
+                                        </h5>
+                                    </div>
+
+
+                                    <% } %>
+
+                                <% } %>
+
+                            </div>
+                        </div>
+                    </a>
+
+                <div class="form">
+                    <form method="post" class="col s6" action="" name="comment">
+                        <input type="text" class="col s6" name="content" class="content" placeholder="Add a comment">
+                        <input type="hidden" name="postid" value="<%= posts[i]._id %>">
+<!--                        <input type="submit" value="submit" class="btn-comments">-->
+
+                    </form>
+
+                    </p>
+                </div>
+
+
+                </div>
+
+                <% } %>
+
+        </div>
+
+        <% } %>
+    </div>
+    </div>
+
+<% } else { %>
+
+    <div class="container">
+        <h1>Please Log in! In order to see the posts</h1>
+    </div>
+
+<% } %>
+
+<script src="/js/main.js"></script>
+<script src="/js/del.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

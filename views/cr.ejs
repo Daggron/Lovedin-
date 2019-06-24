@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        LovedIn
+    </title>
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <meta name="Author" content="Lord Abhay Sharma Himself">
+    <meta name="Description" content="A dating website">
+    <meta name="keywords" content="Lovedin , Dating,Chitkara Lovedin">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Akronim&display=swap" rel="stylesheet">
+    <script src="/js/particles.min.js"></script>
+    <script src="https://unpkg.com/typewriter-effect/dist/core.js"></script>
+</head>
+<body>
+<section class="register">
+
+    <div id="particles-js"></div>
+    <div class="heading">
+        <h1 id="app" class="spunky-text">
+
+        </h1>
+        <hr>
+        <h1 id="app2" class="funky-text">
+
+        </h1>
+    </div>
+
+    <div class="container">
+
+        <%- messages('messages', locals) %>
+        <% if(errors){ %>
+            <% for(var i = 0;i < errors.length;i++){ %>
+                <p><%= errors[i].msg %></p>
+        <% }} %>
+
+        <div class="row">
+
+            <form class="col s12 register-form" method="POST" action="createadmin" >
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Placeholder" name="name" id="first_name" type="text" class="validate">
+                        <label for="first_name">Your Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select name="role" id="role">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="Admin">Option 1</option>
+                            <option value="Data">Option 2</option>
+                            <option value="Complaint">Option 3</option>
+                        </select>
+                        <label for="role">Select Role</label>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate" name="email">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="phoneNumber" type="tel" class="validate" name="phoneNumber">
+                        <label for="phoneNumber">Enter Phone Number</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" name="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="submit" class="btn" value="Sign Up!">
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</section>
+<script>
+    particlesJS.load('particles-js', '/js/particles.json', function() {
+        console.log('callback - particles.js config loaded');
+    });
+
+    var app = document.getElementById('app');
+
+    var typewriter = new Typewriter(app, {
+        loop: true
+    });
+
+    typewriter.typeString('Register Here')
+        .pauseFor(2500)
+        .deleteAll()
+        .pauseFor(2500)
+        .start();
+
+    var app2 = document.getElementById('app2');
+
+    var typewriter = new Typewriter(app2, {
+        loop: true
+    });
+
+    typewriter.typeString('To get Started')
+        .pauseFor(2500)
+        .deleteAll()
+        .pauseFor(2500)
+        .start();
+
+    $(document).ready(function(){
+        $('select').formSelect();
+    });
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<% include base.ejs%>
+<link rel="stylesheet" href="/css/index.css">
+<body>
+
+<div class="container">
+
+    <%- messages('messages', locals) %>
+<!--    <div class="row">-->
+<!--        <form class="col s12" method="POST" action="Verify">-->
+<!--            <div class="input-field col s12">-->
+<!--                <input id="last_name" name="username" type="text" class="validate">-->
+<!--                <label for="last_name">Please Enter Your Email</label>-->
+<!--            </div>-->
+
+
+<!--            <div class="row">-->
+<!--                <div class="input-field col s12">-->
+<!--                    <input id="token" type="text" name="token" class="validate">-->
+<!--                    <label for="token">One Time Password</label>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="row">-->
+<!--                <input type="submit" class="btn" value="Sign In!">-->
+<!--            </div>-->
+
+<!--        </form>-->
+<!--    </div>-->
+    <div class="login">
+        <div class="form">
+            <h2>Please Verify Your Email</h2>
+            <form method="post" action="Verify">
+                <input type="text" placeholder="Please Enter Your Email" name="username">
+                <input type="text" placeholder="One Time Password" name="token">
+                <input type="submit" value="Sign In" class="submit">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        LovedIn
+    </title>
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <meta name="Author" content="Lord Abhay Sharma Himself">
+    <meta name="Description" content="A dating website">
+    <meta name="keywords" content="Lovedin , Dating,Chitkara Lovedin">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Akronim&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+
+<%- include  navbar.ejs%>
+
+
+<%- messages('messages', locals) %>
+
+<% if (users){ %>
+<div class="cards-container">
+
+    <% for (var i=0;i<users.length;i++){ %>
+    <div class="card card-one">
+        <div class="header">
+            <div class="avatar">
+                <img src="/<%= users[i].profile%>" alt="Jhon Doe" />
+            </div>
+        </div>
+
+        <h3><%= users[i].name%></h3>
+        <div class="desc">
+            <%= users[i].bio%>
+            <br>
+            <p class="type">
+                <%= users[i].type%>
+            </p>
+        </div>
+        <div class="footer">
+                <a href="/users/<%= users[i]._id%>">
+                    Visit profile
+                </a>
+        </div>
+    </div>
+    <%}%>
+</div>
+<% } else { %>
+
+    <div class="container">
+        <h1>Please Log in! In order to see the users</h1>
+    </div>
+
+<% } %>
+
+<script src="/js/main.js"></script>
+<script src="/js/del.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        LovedIn
+    </title>
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <meta name="Author" content="Lord Abhay Sharma Himself">
+    <meta name="Description" content="A dating website">
+    <meta name="keywords" content="Lovedin , Dating,Chitkara Lovedin">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <%- messages('messages', locals) %>
+
+
+    <div class="row">
+        <form class="col s12" method="POST" action="" enctype="multipart/form-data" >
+            <div class="row">
+                <div class="input-field col s6">
+                    <input placeholder="Placeholder" name="name" id="first_name" type="text" class="validate" value="<%= found.name%>">
+                    <label for="first_name">Your Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="last_name" name="username" value="<%= found.username%>" type="text" class="validate">
+                    <label for="last_name">User Name</label>
+                </div>
+            </div>
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>Profile Photo</span>
+                    <input name="profilephoto"  value="<%= found.profile%>"  type="file">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" name="profile" value="<%= found.profile%>" type="text">
+                </div>
+            </div>
+            <div class="input-field col s12">
+                <input id="bio" name="bio" type="text" class="validate" value="<%= found.bio%>">
+                <label for="bio">Bio</label>
+            </div>
+
+            <div class="row">
+                <input type="submit" class="btn" value="Update">
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

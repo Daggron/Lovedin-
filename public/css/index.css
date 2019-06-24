@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.login {
+    width: 25vw;
+    height: 500px;
+    border: 1px solid #CCC;
+    background: url(http://68.media.tumblr.com/2b27908fac782ca54cc2b3aff6862423/tumblr_mra3owkIhC1ro855no1_500.gif) center center no-repeat;
+    background-size: cover;
+    margin: 30px auto;
+    border-radius: 3px;
+}
+.login .form {
+    width: 100%;
+    height: 100%;
+    padding: 15px 20px;;
+}
+.login .form h2 {
+    color: #FFF;
+    text-align: center;
+    font-weight: normal;
+    font-size: 18px;
+    margin-top: 60px;
+    margin-bottom: 80px;
+}
+.login .form input {
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    background: rgba(255,255,255,.5);
+    border: 1px solid rgba(255,255,255,.1);
+    padding: 0;
+    color: #FFF;
+    border-radius: 2px;
+    font-size: 14px;
+}
+.login .form input:focus {
+    border: 1px solid rgba(255,255,255,.8);
+    outline: none;
+}
+::-webkit-input-placeholder {
+    color: #DDD;
+}
+.login .form input.submit {
+    background: rgba(255,255,255,.9);
+    color: #444;
+    font-size: 15px;
+    margin-top: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #ff8900;
+}
+
+input[type='submit']:hover{
+    background: #6573d0;
+}
+
+::placeholder{
+    color: #ff8900;
+}
+input[type='text']{
+    color: #ffffff!important;
+}
